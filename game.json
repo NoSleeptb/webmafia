@@ -27,15 +27,15 @@
     {
       "_help": "COPY THIS BLOCK to add a character. id must be unique, lowercase, no spaces.",
       "id": "don",
-      "name": "Vincent 'The Don' Moretti",
-      "role": "Mafia Boss",
+      "name": "Cameron Chase",
+      "role": "The serial killer",
       "team": "mafia",
       "copies": 1,
-      "tagline": "Smiles at the front door, signs orders at the back.",
+      "tagline": "A doctor with a secret hatred of people. Friendly at first, but killer second.",
 
-      "personality": "Charming, patient, never raises his voice. Speaks softly and expects to be obeyed. Hates loose ends.\n\nPlay him as: calm, polite, quietly threatening.",
-      "description": "Early 50s. Silver at the temples, immaculate charcoal suit, a pinky ring he turns when he's thinking. Owns the Lucky Fox Supper Club.",
-      "story": "Twenty years ago you built Ravenholt's underworld from a single backroom card game. Now an informant is feeding the police your secrets, and you have until the next full moon to find them.",
+      "personality": "Charming, sarcastic, and a little witty. always patient with others but has a tendency to make snyde comments behind peoples backs.",
+      "description": "Early 20s, Good at first impressions and loves to chat. Messes up names quite constantly in order to seem more clumsy",
+      "story": "You serve as a part time front desk worker at the local hospital, helping to check people in and make sure that all the doctors get to there patients. You always make a stop at the bakery on the way home to chat with barnelby.",
       "secrets": "Your fellow Mafia: (write names here at game start, or use the host's message button).\nYou win when the Mafia outnumber the town.",
       "extra": [
         { "title": "Your alibi", "text": "You were at the Supper Club all evening. Forty witnesses. All on your payroll." }
@@ -45,7 +45,30 @@
         {
           "id": "order_hit",
           "label": "Order a hit",
-          "description": "Choose who the Mafia targets tonight.",
+          "description": "Choose who you kill tonight.",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "witch",
+      "name": "Claire Perstoff",
+      "role": "The witch",
+      "team": "mafia",
+      "copies": 1,
+      "tagline": "evil evil witch who places curses on people she doesnt like muhahaha",
+
+      "personality": "Goofy witch, hobbles around alot but is very wholesome and funny",
+      "description": "late 50s, Very silly and funny. Loves to brew and bake, but also catch butterflys in a cute way.",
+      "story": "You love to talk with others about witch things like brewing potions, black cats, and evil curses. But also baking and food!",
+      "secrets": "Your fellow Mafia: (write names here at game start, or use the host's message button).\nYou win when the Mafia outnumber the town.",
+      "abilities": [
+        {
+          "id": "witch_curse",
+          "label": "Witch curse",
+          "description": "Place a curse on one other person. That person cant use there action tommarow.",
           "target": "alive",
           "allowSelf": false,
           "uses": null
@@ -54,14 +77,14 @@
     },
     {
       "id": "doctor",
-      "name": "Dr. Evelyn Hart",
+      "name": "Callaway Barnelby",
       "role": "Doctor",
       "team": "town",
       "copies": 1,
-      "tagline": "Sworn to save everyone, even the ones she shouldn't.",
+      "tagline": "A trusty entromologist who secretly saves people in there freetime.",
       "personality": "Warm, anxious, a chronic over-explainer. Gets flustered when accused.",
-      "description": "Late 30s. Round glasses, leather bag, ink on her fingers. Runs the only clinic in town.",
-      "story": "You've patched up half the town, including a few men you suspect aren't builders. You've never asked how they were hurt. Tonight that might change.",
+      "description": "Late 30s. Warm smile. Goofy demeanor, A little anxious.",
+      "story": "Your well known in town for being the local crazy who loves to get close with bugs. But in your free time, you study to become a doctor to help others instead.",
       "secrets": "You may NOT protect the same person two nights in a row (host enforces this).",
       "abilities": [
         {
@@ -76,14 +99,14 @@
     },
     {
       "id": "detective",
-      "name": "Inspector Sam Calloway",
+      "name": "Shawn franks",
       "role": "Detective",
       "team": "town",
       "copies": 1,
-      "tagline": "Three days from retirement and one case from a promotion.",
-      "personality": "Dry humor, tired eyes, always one question short of being rude.",
-      "description": "Mid 40s. Rumpled trench coat, notebook with a broken spine, coffee-stained everything.",
-      "story": "The last three disappearances share one detail nobody else has noticed. You can feel the answer. You just need the right suspect in front of you.",
+      "tagline": "A make believe psychic who really is just good at noticing the small things and being very unspecific. A better detective than most however.",
+      "personality": "Constantly sarcastic and witty, playing everything like there too cool to be here.",
+      "description": "Goofy, charismatic, and overall a woman charmer and lover. Best friends with Gus Spencer",
+      "story": "After being invited to the governers ball, you decide to do your favorite party trick of pretending the spirits tell you about a person. But can the spirits save you now?",
       "secrets": "The host will privately tell you the result of each investigation.",
       "abilities": [
         {
@@ -97,24 +120,112 @@
       ]
     },
     {
-      "id": "vigilante",
-      "name": "Rosa 'Red' Delgado",
-      "role": "Vigilante",
+      "id": "cop",
+      "name": "Carlton Lasiter",
+      "role": "Cop movie fanatic",
       "team": "town",
       "copies": 1,
-      "tagline": "One bullet. One chance. No second guesses.",
-      "personality": "Blunt, impatient, and tired of waiting for the law to catch up.",
-      "description": "Early 30s. Red scarf, work boots, a cigarette she never lights. Former dockworker.",
-      "story": "The Mafia took your brother's boat, then your brother. You kept one bullet from his old revolver. You swore you'd use it exactly once.",
+      "tagline": "A tired detective who really just wants to be cool.",
+      "personality": "Stone cold serious, Incredibly suspicious of everyone ",
+      "description": "Early 30s. Mogs alot, very serious and apathetic.",
+      "story": "You've always looked for that small town murder plot, even though you failed out of the acadmey and now work as a basic accountant. Some part of you has always loves witty cop movies, and dream of being the star of one.",
       "secrets": "If you shoot a townsperson, the guilt will be on you. The host decides what happens.",
       "abilities": [
         {
           "id": "shoot",
           "label": "Take the shot",
-          "description": "You only have ONE bullet for the whole game.",
+          "description": "You only have THREE bullets for the whole game.",
           "target": "alive",
           "allowSelf": false,
-          "uses": 1
+          "uses": 3
+        }
+      ]
+    },
+    {
+      "id": "detective2",
+      "name": "Gus Spencer",
+      "role": "Detective",
+      "team": "town",
+      "copies": 1,
+      "tagline": "No powers except a hatred of shawns nonsense and extreme anxiety",
+      "personality": "Late 20s, Very jumpy, Shawns best friend. More serious than shawn but will jump into his arms at the first mention of a ghost",
+      "description": "Serious, No non-sense, and definitley afriad of danger. Best friends with shawn",
+      "story": "You work as a pharmasudical sales rep as your full time job, but your part time job is helping shawn pretend to be a psychic by giving him your smarts to help figure people out",
+      "secrets": "blehhhh",
+      "abilities": [
+        {
+          "id": "investigate2",
+          "label": "Investigate a suspect",
+          "description": "Pick someone. The host will message you what you learn.",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "baker",
+      "name": "Barnelby Promescur",
+      "role": "Baker",
+      "team": "town",
+      "copies": 1,
+      "tagline": "A love of sweet treats and breads alike",
+      "personality": "Very cheery, Very loving. think of a very sweet man who just likes to help.",
+      "description": "Late 40s, A baker who owns a small shop in town that serves the community. Everyones grandpa",
+      "story": "You own a local bakery in town that serves pastrys and breads. You work with your rebelious nephew Max who wants to be a big chef like gordon ramsey and hates baking. Your favorite regular is cameron who always comes in to chat after work.",
+      "secrets": "",
+      "abilities": [
+        {
+          "id": "baker",
+          "label":"Free treat",
+          "description": "Bake a treat for a friend! May have an effect",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "baker2",
+      "name": "Max Promescur",
+      "role": "Cook",
+      "team": "town",
+      "copies": 1,
+      "tagline": "A Rebelious youngerster who hates baking",
+      "personality": "Rebelious mean and snyde. think of a classic rebelious teen",
+      "description": "You live in Ravenholt. You have a job, neighbors and suspicions.",
+      "story": "You run a local bakery with your uncle Barnelby in town that serves pastrys and breads. You someday wish to leave and go become a top chef like gordon ramsey, but for now yours stuck tending to bread or whatever a bakery sells.",
+      "secrets": "",
+      "abilities": [
+        {
+          "id": "cook",
+          "label":"Taste test",
+          "description": "Cook for a friend! May have an effect",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "russian",
+      "name": "Vlab orchovsky",
+      "role": "Alcholic",
+      "team": "neutral",
+      "copies": 1,
+      "tagline": "The muffin man? No, the russian man",
+      "personality": "Just be really russian. I mean accent and everything",
+      "description": "Your the town drunk, and you love to be the life of the party. Very russian life of the party. Just incredibly russian",
+      "story": "Your a beer salesman who settled in this town because you just love one specific bar here (you can make it up). Everywhere you go you bring the party.",
+      "secrets": "You are a neutral, however you may choose your win condition by picking either the mafia side or the town side. Go to noah to choose",
+      "abilities": [
+        {
+          "id": "drink",
+          "label":"Have a drink",
+          "description": "Give a drink to someone! Changes who they target.",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
         }
       ]
     },
