@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#12251d">
+<title>Host Console</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<main class="wrap wide">
+
+  <section id="login" class="card hidden" style="max-width:420px;margin:40px auto">
+    <h2>Host console</h2>
+    <label class="lbl" for="pw">Host password</label>
+    <input id="pw" type="password" class="input" autocomplete="current-password">
+    <button id="pwGo" class="btn primary block">Enter</button>
+    <p id="pwErr" class="small" style="color:var(--stamp)"></p>
+  </section>
+
+  <div id="dash" class="hidden">
+    <header class="top"><div class="title" id="gtitle">Host console</div><a class="who" href="/" target="_blank">player page</a></header>
+
+    <section class="card">
+      <h3>Game phase</h3>
+      <div id="phases" class="row wrapr"></div>
+      <p id="phaseNote" class="muted small"></p>
+    </section>
+
+    <section class="card">
+      <h3>Announcement (shows on every phone)</h3>
+      <textarea id="ann" class="input" rows="2" maxlength="500" placeholder="e.g. Dawn breaks. Vincent was found in the harbor."></textarea>
+      <div class="row"><button class="btn primary" id="annSend">Send announcement</button><button class="btn" id="annClear">Clear</button></div>
+    </section>
+
+    <section class="card">
+      <h3>Abilities</h3>
+      <div class="row wrapr"><button class="btn" id="openAll">Open every ability</button><button class="btn" id="closeAll">Close every ability</button></div>
+      <div class="row"><select id="bulkChar" class="input"></select></div>
+      <div class="row"><button class="btn open" id="bulkOpen">Open for this character</button><button class="btn" id="bulkClose">Close for this character</button></div>
+      <p class="muted small">Players only see working buttons when the phase is "action" AND you have opened their ability. Switching to any other phase closes everything.</p>
+    </section>
+
+    <section id="votesCard" class="card hidden">
+      <h3>Votes</h3><div id="tally"></div>
+      <button class="btn sm" id="clearVotes" style="margin-top:8px">Clear votes</button>
+    </section>
+
+    <h2 style="margin:18px 2px 10px">Players</h2>
+    <div id="players" class="grid"></div>
+
+    <section class="card" style="margin-top:14px">
+      <h3>Setup</h3>
+      <div class="row wrapr">
+        <button class="btn primary" id="deal">Deal characters randomly</button>
+        <button class="btn" id="reload">Reload game.json</button>
+        <button class="btn" id="msgAll">Message everyone</button>
+      </div>
+      <div class="row wrapr">
+        <button class="btn danger" id="resetKeep">New game, keep players</button>
+        <button class="btn danger" id="resetAll">Wipe everything</button>
+      </div>
+    </section>
+
+    <section class="card"><details class="sec"><summary>Character cheat-sheet</summary><div id="chars"></div></details></section>
+    <section class="card"><h3>Game log</h3><div id="log" class="log"></div><button class="btn sm" id="clearLog" style="margin-top:8px">Clear log</button></section>
+  </div>
+</main>
+<script src="/host.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+{
+  "_help": "EDIT ME. Everything players see comes from this file. After saving, press 'Reload game.json' on the host page (no restart needed). Keys starting with _ are ignored.",
+
+  "title": "Midnight in Ravenholt",
+  "rules": "Welcome to Ravenholt. By day the town argues. By night the Mafia strikes.\nThe host will tell you when you may use your abilities. Stay in character!",
+
+  "_phaseLabels": "Rename the phases players see. Keys must stay: lobby, discussion, action, voting, ended.",
+  "phaseLabels": {
+    "lobby": "Waiting for the game to start",
+    "discussion": "Town Meeting: talk it out",
+    "action": "Night falls: use your abilities when the host calls you",
+    "voting": "Cast your vote",
+    "ended": "Game over"
+  },
+
+  "_teams": "Team ids used by characters below. 'color' tints the badge on the player's card.",
+  "teams": {
+    "town":   { "label": "Townsfolk", "color": "#2f7d5b" },
+    "mafia":  { "label": "The Mafia", "color": "#b3342b" },
+    "neutral":{ "label": "Wild Card", "color": "#7a5ea8" }
+  },
+
+  "_defaultCharacterId": "Anyone left over after a random deal gets this character.",
+  "defaultCharacterId": "townsperson",
+
+  "characters": [
+    {
+      "_help": "COPY THIS BLOCK to add a character. id must be unique, lowercase, no spaces.",
+      "id": "don",
+      "name": "Vincent 'The Don' Moretti",
+      "role": "Mafia Boss",
+      "team": "mafia",
+      "copies": 1,
+      "tagline": "Smiles at the front door, signs orders at the back.",
+
+      "personality": "Charming, patient, never raises his voice. Speaks softly and expects to be obeyed. Hates loose ends.\n\nPlay him as: calm, polite, quietly threatening.",
+      "description": "Early 50s. Silver at the temples, immaculate charcoal suit, a pinky ring he turns when he's thinking. Owns the Lucky Fox Supper Club.",
+      "story": "Twenty years ago you built Ravenholt's underworld from a single backroom card game. Now an informant is feeding the police your secrets, and you have until the next full moon to find them.",
+      "secrets": "Your fellow Mafia: (write names here at game start, or use the host's message button).\nYou win when the Mafia outnumber the town.",
+      "extra": [
+        { "title": "Your alibi", "text": "You were at the Supper Club all evening. Forty witnesses. All on your payroll." }
+      ],
+
+      "abilities": [
+        {
+          "id": "order_hit",
+          "label": "Order a hit",
+          "description": "Choose who the Mafia targets tonight.",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "doctor",
+      "name": "Dr. Evelyn Hart",
+      "role": "Doctor",
+      "team": "town",
+      "copies": 1,
+      "tagline": "Sworn to save everyone, even the ones she shouldn't.",
+      "personality": "Warm, anxious, a chronic over-explainer. Gets flustered when accused.",
+      "description": "Late 30s. Round glasses, leather bag, ink on her fingers. Runs the only clinic in town.",
+      "story": "You've patched up half the town, including a few men you suspect aren't builders. You've never asked how they were hurt. Tonight that might change.",
+      "secrets": "You may NOT protect the same person two nights in a row (host enforces this).",
+      "abilities": [
+        {
+          "id": "protect",
+          "label": "Protect a patient",
+          "description": "Choose someone to shield from harm tonight. You may choose yourself.",
+          "target": "alive",
+          "allowSelf": true,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "detective",
+      "name": "Inspector Sam Calloway",
+      "role": "Detective",
+      "team": "town",
+      "copies": 1,
+      "tagline": "Three days from retirement and one case from a promotion.",
+      "personality": "Dry humor, tired eyes, always one question short of being rude.",
+      "description": "Mid 40s. Rumpled trench coat, notebook with a broken spine, coffee-stained everything.",
+      "story": "The last three disappearances share one detail nobody else has noticed. You can feel the answer. You just need the right suspect in front of you.",
+      "secrets": "The host will privately tell you the result of each investigation.",
+      "abilities": [
+        {
+          "id": "investigate",
+          "label": "Investigate a suspect",
+          "description": "Pick someone. The host will message you what you learn.",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": null
+        }
+      ]
+    },
+    {
+      "id": "vigilante",
+      "name": "Rosa 'Red' Delgado",
+      "role": "Vigilante",
+      "team": "town",
+      "copies": 1,
+      "tagline": "One bullet. One chance. No second guesses.",
+      "personality": "Blunt, impatient, and tired of waiting for the law to catch up.",
+      "description": "Early 30s. Red scarf, work boots, a cigarette she never lights. Former dockworker.",
+      "story": "The Mafia took your brother's boat, then your brother. You kept one bullet from his old revolver. You swore you'd use it exactly once.",
+      "secrets": "If you shoot a townsperson, the guilt will be on you. The host decides what happens.",
+      "abilities": [
+        {
+          "id": "shoot",
+          "label": "Take the shot",
+          "description": "You only have ONE bullet for the whole game.",
+          "target": "alive",
+          "allowSelf": false,
+          "uses": 1
+        }
+      ]
+    },
+    {
+      "id": "townsperson",
+      "name": "Ordinary Citizen",
+      "role": "Townsperson",
+      "team": "town",
+      "copies": 3,
+      "tagline": "No powers. A lot of opinions.",
+      "personality": "Make this up! Pick a trade, a quirk and a grudge from the host's list.",
+      "description": "You live in Ravenholt. You have a job, neighbors and suspicions.",
+      "story": "Something is wrong in town. You don't know what, but you know who you don't trust.",
+      "secrets": "",
+      "abilities": []
+    }
+  ]
+}

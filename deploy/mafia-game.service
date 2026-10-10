@@ -1,0 +1,16 @@
+# Save as /etc/systemd/system/mafia-game.service
+[Unit]
+Description=Mafia Night game server
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/mafia-game
+ExecStart=/usr/bin/node server.js
+Environment=PORT=3000
+Environment=HOST_PASSWORD=CHANGE-THIS-PASSWORD
+Restart=on-failure
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target
