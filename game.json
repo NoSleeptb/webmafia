@@ -1,8 +1,8 @@
 {
   "_help": "EDIT ME. Everything players see comes from this file. After saving, press 'Reload game.json' on the host page (no restart needed). Keys starting with _ are ignored.",
 
-  "title": "Midnight in Ravenholt",
-  "rules": "Welcome to Ravenholt. By day the town argues. By night the Mafia strikes.\nThe host will tell you when you may use your abilities. Stay in character!",
+  "title": "A very botanical meeting",
+  "rules": "Welcome to the botany club. The town of Ravenholts #1 botany club! come chat about the plants or whatever.\nThe host will tell you when you may use your abilities. Stay in character!",
 
   "_phaseLabels": "Rename the phases players see. Keys must stay: lobby, discussion, action, voting, ended.",
   "phaseLabels": {
